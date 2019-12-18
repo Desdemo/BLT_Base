@@ -1,6 +1,6 @@
 package base
 
-type User struct {
-	Id int64
+type Role struct {
+	Model
 	Name string
 }

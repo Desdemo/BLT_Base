@@ -1,19 +1,18 @@
 package base
 
 import (
+	_ "github.com/go-sql-driver/mysql"
 	"log"
 	"time"
-	_ "github.com/go-sql-driver/mysql"
 	"xorm.io/xorm"
 )
 
 type Model struct {
-	Id       int       `xorm:"pk autoincr comment('唯一ID')" json:"id"`
+	Id       int64     `xorm:"pk autoincr comment('唯一ID')" json:"id"`
 	CreateAt time.Time `xorm:"created comment('创建时间')"`
 	UpdateAt time.Time `xorm:"updated comment('更新时间')"`
 	DeleteAt time.Time `xorm:"deleted comment('删除时间')"`
 }
-
 
 var Engine *xorm.Engine
 
