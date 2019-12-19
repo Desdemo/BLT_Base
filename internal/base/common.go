@@ -70,3 +70,9 @@ func (com *Common) List() (data interface{}, err error) {
 	err = Engine.Table(com.Table).Find(com.Data)
 	return com.Data, err
 }
+
+func (com *Common) IdList() (data interface{}, err error) {
+	idList := new([]int64)
+	err = Engine.Table(com.Table).Cols(com.Name).ID(com.Id).Find(idList)
+	return idList, err
+}

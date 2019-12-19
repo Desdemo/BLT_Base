@@ -2,5 +2,6 @@ package base
 
 type Role struct {
 	Model
-	Name string
+	Name        string `json:"name"`
+	Description string `json:"description"`
 }
